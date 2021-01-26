@@ -4,5 +4,8 @@
   },
   "settings": {
     "title": "Settings"
+  },
+  "home":{
+    "title":"Welcome"
   }
 }

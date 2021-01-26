@@ -5,20 +5,20 @@ import {
   Toggle,
   Text,
   useStyleSheet,
-  StyleService,
+  StyleService
 } from "@ui-kitten/components";
 import { SafeAreaView } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import {
   themeChangeLight,
   themeChangeDark,
-  localeChange,
+  localeChange
 } from "@states/actions/settings";
 import { ThemeName } from "@states/reducers/settings";
 import { logout } from "@states/actions/auth";
 import i18n from "@locales/i18n";
 import NavigationService from "@services/navigation";
-import { Updates } from "expo";
+import * as Updates from "expo-updates";
 import { selectTheme, selectLocale } from "@states/selectors";
 
 interface Props {}
@@ -49,7 +49,7 @@ const Settings: React.FC<Props> = (props) => {
       dispatch(localeChange("en"));
     }
     setTimeout(() => {
-      Updates.reload();
+      Updates.reloadAsync();
     }, 300);
   };
 
@@ -69,7 +69,7 @@ const Settings: React.FC<Props> = (props) => {
           style={{
             flexDirection: "row",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "center"
           }}
         >
           <Text>EN</Text>
@@ -95,8 +95,8 @@ const themedStyles = StyleService.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-  },
+    alignItems: "center"
+  }
 });
 
 export default Settings;

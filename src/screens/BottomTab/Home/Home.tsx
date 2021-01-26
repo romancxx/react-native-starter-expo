@@ -3,7 +3,7 @@ import {
   Layout,
   StyleService,
   useStyleSheet,
-  Text,
+  Text
 } from "@ui-kitten/components";
 import { SafeAreaView } from "react-native";
 import { Header } from "@components/index";
@@ -12,14 +12,13 @@ import i18n from "@locales/i18n";
 
 interface Props {}
 
-const Home: React.FC<Props> = (props) => {
+const Home: React.FC<Props> = ({}) => {
   const styles = useStyleSheet(themedStyles);
 
   const onBack = () => {
     // NavigationService.goBack();
   };
 
-  const {} = props;
   return (
     <Layout style={{ flex: 1 }}>
       <Header
@@ -40,8 +39,8 @@ const themedStyles = StyleService.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-  },
+    alignItems: "center"
+  }
 });
 
 export default Home;
